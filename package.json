@@ -1,0 +1,26 @@
+{
+  "name": "sp2-ca",
+  "version": "0.0.1",
+  "description": "A auction house website written with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hah98/SP2-CA.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "css",
+    "bootstrap",
+    "auction",
+    "house"
+  ],
+  "author": "Hibo H <hibo-1998@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hah98/SP2-CA/issues"
+  },
+  "homepage": "https://github.com/hah98/SP2-CA#readme"
+}

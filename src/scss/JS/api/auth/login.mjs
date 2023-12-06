@@ -25,7 +25,7 @@ export async function login(profile) {
       storage.save("profile", user);
 
       // Redirecting to the main listing page
-      window.location.href = "/AuctionHouse/index.html";
+      window.location.href = "/index.html";
     } else {
       // Authentication failure (Error message)
       alert("Authentication failed. Please check your credentials.");
@@ -36,8 +36,3 @@ export async function login(profile) {
     alert("Network error. Please try again later.");
   }
 }
-
-
-
-
-

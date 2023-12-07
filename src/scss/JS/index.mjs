@@ -40,11 +40,13 @@ testTemplate(); */
 
 import { setRegisterFormListener } from "./handlers/register.mjs";
 import { setLoginFormListener } from "./handlers/login.mjs";
-import { setListFormListener } from "./handlers/listItem.mjs";
+/* import { setListFormListener } from "./handlers/listItem.mjs"; */
 import { logout } from "./handlers/logout.mjs";
 import * as listingMethods from "./handlers/viewAllListings.mjs";
 import * as templates from "./templates/listings.mjs";
-
+import { createListing } from "./api/listings/create.mjs";
+import { updateListing } from "./api/listings/update.mjs";
+import { removeListing } from "./api/listings/delete.mjs";
 
 const path = location.pathname;
 
@@ -52,9 +54,9 @@ if (path === "/AuctionHouse/register/index.html") {
   setRegisterFormListener();
 } else if (path === "/AuctionHouse/login/index.html") {
   setLoginFormListener();
-} else if (path === "/AuctionHouse/listItem/index.html") {
+} /* else if (path === "/AuctionHouse/listItem/index.html") {
   setListFormListener();
-}
+} */
 
 document.addEventListener("DOMContentLoaded", () => {
   // Register the logout button click event
@@ -72,10 +74,13 @@ async function testTemplate() {
 
 testTemplate();
 
-/* 
-
 createListing({
-  title: "This is a title",
-  body: "This is a body",
-});
- */
+  title: "Example",
+  description: "Another Example Yippyyyy",
+  endsAt: "2023-12-12T19:40:11.242Z",
+  tags: ["example"],
+  media: ["https://fastly.picsum.photos/id/124/3504/2336.jpg?hmac=B1Avp6or9Df8vpnN4kQsGNfD66j8hH3gLtootCoTw4M"],
+}); 
+
+/* updateListing();
+removeListing();  */

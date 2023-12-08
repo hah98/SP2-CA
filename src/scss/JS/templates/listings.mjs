@@ -75,7 +75,7 @@ if (listingData.media && listingData.media.length > 0) {
 }
  
   // Tags
-  if (listingData.tags && listingData.tags.length > 0) {
+  /* if (listingData.tags && listingData.tags.length > 0) {
     const tags = document.createElement("div");
     tags.classList.add("tags");
     listingData.tags.forEach((tag) => {
@@ -84,7 +84,7 @@ if (listingData.media && listingData.media.length > 0) {
       tags.appendChild(tagElement);
     });
     listing.appendChild(tags);
-  }
+  } */
 
   // Add more elements as needed
 

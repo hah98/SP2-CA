@@ -40,13 +40,11 @@ testTemplate(); */
 
 import { setRegisterFormListener } from "./handlers/register.mjs";
 import { setLoginFormListener } from "./handlers/login.mjs";
-/* import { setListFormListener } from "./handlers/listItem.mjs"; */
+import { setListFormListener } from "./handlers/listItem.mjs";
 import { logout } from "./handlers/logout.mjs";
 import * as listingMethods from "./handlers/viewAllListings.mjs";
 import * as templates from "./templates/listings.mjs";
-import { createListing } from "./api/listings/create.mjs";
-import { updateListing } from "./api/listings/update.mjs";
-import { removeListing } from "./api/listings/delete.mjs";
+import { createListing, updateListing, removeListing } from "./api/listings/index.mjs";
 
 const path = location.pathname;
 
@@ -74,13 +72,9 @@ async function testTemplate() {
 
 testTemplate();
 
-createListing({
-  title: "Example",
-  description: "Another Example Yippyyyy",
-  endsAt: "2023-12-12T19:40:11.242Z",
-  tags: ["example"],
-  media: ["https://fastly.picsum.photos/id/124/3504/2336.jpg?hmac=B1Avp6or9Df8vpnN4kQsGNfD66j8hH3gLtootCoTw4M"],
-}); 
+/// Create, Update, Delete
 
-/* updateListing();
-removeListing();  */
+/* createListing();
+updateListing();
+removeListing();
+ */

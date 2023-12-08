@@ -3,8 +3,7 @@ import { API_AUCTION_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
 const action = "/listings";
-const method = "get";
-/* const method = "delete"; */
+
 
 export async function getListings() {
   const getListingsUrl = `${API_AUCTION_URL}${action}`;

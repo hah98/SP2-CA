@@ -48,9 +48,9 @@ export function setListFormListener() {
 }
  */
 
-import { createListing } from "../api/listings/index.mjs";
+// listItem.mjs
 
-console.log("Hello");
+import { createListing } from "../api/listings/index.mjs";
 
 export function setListFormListener() {
   const form = document.querySelector("#createListing");
@@ -61,25 +61,29 @@ export function setListFormListener() {
 
       const form = event.target;
       const formData = new FormData(form);
-      const listing = Object.fromEntries(formData.entries());
-
-      // Convert tags to an array
-      if (listing.tags) {
-        listing.tags = listing.tags.split(",").map((tag) => tag.trim());
-      }
-
-      // Ensure media is a single string
-      if (listing.media) {
-        listing.media = listing.media;
-      }
-
-      // Set endsAt to the current timestamp (ISO format)
-      const now = new Date();
-      now.setFullYear(now.getFullYear() + 1); // Set endsAt to one year from now
-      listing.endsAt = now.toISOString();
-
+      const listing = {
+        title: formData.get("title"),
+        description: formData.get("description"),
+        endsAt: formData.get("endsAt"),
+        tags: (formData.get("tags") || "").split(",").map((tag) => tag.trim()),
+        media: formData.get("media")?.trim(),
+      };
       // Send it to the API
-      await createListing(listing);
+      try {
+        await createListing(listing);
+        // Show success message
+        showSuccessMessage("Listing created successfully!");
+      } catch (error) {
+        console.error("Error creating listing:", error);
+        // Handle error or show error message
+      }
     });
   }
+}
+
+function showSuccessMessage(message) {
+  window.alert(message);
+
+    // Redirecting to the main listing page
+    window.location.href = "/index.html";
 }

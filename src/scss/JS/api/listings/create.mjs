@@ -62,6 +62,10 @@ export async function createListing(listingData) {
   console.log(listing);
 }
 
+console.log("Hello 2");
+
+
+
 
 /* import { API_AUCTION_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";

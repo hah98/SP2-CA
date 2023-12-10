@@ -5,7 +5,5 @@ export * from "./login.mjs";
 export * from "./logout.mjs";
 export * from "./viewAllListings.mjs";
 export * from "./listItem.mjs";
-
-/* export * from "./createPost.mjs";
-export * from "./updatePost.mjs";
-export * from "./updateProfile.mjs"; */
+export * from "./viewListing.mjs";
+export * from "./updateListing.mjs";

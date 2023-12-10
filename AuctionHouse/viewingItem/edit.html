@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Auction House / Listings page </title>
+    <title>Auction House / Edit item </title>
     <link rel="stylesheet" href="/styles.css">
-    <script type="module" src="../../src/scss/JS/index.mjs" defer></script>
+    <script type="module" src="../../src/scss/JS/index.mjs"></script>
     <link rel="stylesheet" href="../../dist/css/styles.css" defer>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -73,17 +73,44 @@
       </nav>
       </header>
 
-    <main class="flex-grow-1">
+      <h1 class="text-center mt-5">ITEM USER MADE EDIT VERSION</h1>
       <div class="container-fluid">
         <div class="row justify-content-center">
-          <div class="col-10 col-md-12">
-            
-            <h1 class="text-center mt-5" style="margin-bottom: 50px;">ACTIVE LISTINGS</h1>
+          <div class="col-12 col-md-6">
 
-        
-            <div  id="listings">
-              <!-- This is where all the listings are going -->
-            </div>
+            <form id="editListing">
+                <div class="form-group mb-3">
+                  <label for=""> Title</label>
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="title"
+                    required 
+                    maxlength="100"
+                  />
+                </div>
+                 <div class="form-group mb-3"> 
+                <label for=""> Body</label>
+                <textarea class="form-control" name="body" required> </textarea>
+              </div>
+
+            
+              <div class="form-group mb-3"> 
+                <label for=""> Tags</label>
+                <input class="form-control" type="text" name="tags"> 
+              </div>
+
+              <div class="form-group mb-3"> 
+                <label for=""> Media</label>
+                <input class="form-control" type="url" name="media"> 
+              </div>
+  
+                <div style="margin-bottom: 50px;">
+                <button class="btn text-light" style="background-color: blue">Update Listing</button>
+                </div>
+               
+              </form>
+          
           </div>
         </div>
       </div>

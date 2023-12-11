@@ -62,9 +62,9 @@ if (path === "/AuctionHouse/register/index.html") {
   listeners.setLoginFormListener();
 } else if (path === "/AuctionHouse/listItem/index.html") {
   listeners.setListFormListener();
-} /* else if (path === "/AuctionHouse/viewingItem/edit.html") {
-  setUpdateFormListener();
-} */
+} else if (path === "/AuctionHouse/viewingItem/edit.html") {
+  listeners.setUpdateFormListener();
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Register the logout button click event

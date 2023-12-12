@@ -72,7 +72,6 @@ export async function createListing(listingData) {
   return createdListing;
 }
 
-console.log("Hello 2");
 
 
 /* import { API_AUCTION_URL } from "../constants.mjs";

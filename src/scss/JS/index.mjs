@@ -48,6 +48,7 @@ import * as listingsMethods from "./handlers/index.mjs";
 import * as listingMethods from "./handlers/index.mjs";
 /* import * as listingsMethods from "./templates/index.mjs"; */
 import * as templates from "./templates/index.mjs";
+
 /* import {
   createListing,
   updateListing,
@@ -73,13 +74,43 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-async function oneListingTemplate() {
+/* async function oneListingTemplate() {
   const listing = await listingMethods.getListing();
   const container = document.querySelector("#listing");
   templates.renderListingTemplate(listing, container);
 }
 
+oneListingTemplate(); */
+
+
+//// Second try oneListingTemplate
+
+
+async function oneListingTemplate() {
+  // Extract the id from the URL query string
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+
+  if (!id) {
+    console.error("Listing ID is missing in the URL");
+    return;
+  }
+
+  try {
+    // Fetch the listing data using the id
+    const listing = await listingMethods.getListing(id);
+
+    // Render the listing template
+    const container = document.querySelector("#listing");
+    templates.renderListingTemplate([listing], container);
+  } catch (error) {
+    console.error("Error fetching or rendering listing:", error);
+  }
+}
+
 oneListingTemplate();
+
+
 
 /* /* ALL LISTINGS */
 

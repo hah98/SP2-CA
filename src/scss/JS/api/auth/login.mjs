@@ -28,7 +28,7 @@ export async function login(profile) {
       window.location.href = "/index.html";
     } else {
       // Authentication failure (Error message)
-      alert("Authentication failed. Please check your credentials.");
+      alert("Authentication failed. Please check if your email or password is right.");
     }
   } catch (error) {
     // Handle network errors

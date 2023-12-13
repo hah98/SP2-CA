@@ -9,9 +9,9 @@ export async function updateListing(listingData) {
     throw new Error("Update of listing requires listingID");
   }
 
-  const createListingURL = `${API_AUCTION_URL}${action}/${listingData.id}`;
+  const updateListingURL = `${API_AUCTION_URL}${action}/${listingData.id}`;
 
-  const response = await authFetch(createListingURL, {
+  const response = await authFetch(updateListingURL, {
     method,
     body: JSON.stringify(listingData),
   });

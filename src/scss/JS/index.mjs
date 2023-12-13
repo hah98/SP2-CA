@@ -91,16 +91,24 @@ document.addEventListener("DOMContentLoaded", () => {
   if (isLoggedIn) {
     // User is logged in, show the logout button
     logoutButton.style.display = "block";
-  } else {
+    // Set the avatar in the header
+    const profile = JSON.parse(localStorage.getItem("profile"));
+    if (profile && profile.avatar && profile.credits) {
+      headerAvatar.src = profile.avatar;
+      
+      // Concatenate the label and the actual credit value
+      headerCredit.innerHTML = "Credits: " + profile.credits;
+    }
+    } else {
     // User is not logged in, hide the logout button
     logoutButton.style.display = "none";
-  }
+    }
 
-  // Register the logout button click event
-  logoutButton.addEventListener("click", () => {
-    listeners.logout();
-  });
-});
+    // User clicks logout button: 
+    logoutButton.addEventListener("click", () => {
+      listeners.logout();
+    });
+    });
 
 
 /* async function oneListingTemplate() {

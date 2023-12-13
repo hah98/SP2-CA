@@ -25,7 +25,6 @@ a {
   align-items: center;
 } */
 
-
 #listings {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 300px));
@@ -51,15 +50,35 @@ img.img-fluid {
 } */
 
 .title {
-  font-size: 50px;
+  font-size: 40px;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
+  /*  text-align: center; */
   margin-bottom: 10px;
 }
 
-
-
 .description {
   font-size: 20px;
+}
 
+footer {
+  margin-top: 100px;
+}
+
+.form-control:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Profile edit page */
+
+#avatarPreview {
+  margin-left: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+#namePreview {
+  margin-left: 140px;
+  margin-top: 20px;
 }

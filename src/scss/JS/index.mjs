@@ -65,14 +65,43 @@ if (path === "/AuctionHouse/register/index.html") {
   listeners.setListFormListener();
 } else if (path === "/AuctionHouse/viewingItem/edit.html") {
   listeners.setUpdateFormListener();
+} else if (path === "/AuctionHouse/profile/edit.html") {
+  listeners.setUpdateProfileFormListener();
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+
+
+/// First try logout button 
+/* document.addEventListener("DOMContentLoaded", () => {
   // Register the logout button click event
   document.getElementById("logoutButton").addEventListener("click", () => {
     listeners.logout();
   });
+}); */
+
+
+/// Sceond try logout button
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutButton = document.getElementById("logoutButton");
+
+  // Check if the user is logged in (profile stored in the localStorage)
+  const isLoggedIn = localStorage.getItem("profile") !== null;
+
+  if (isLoggedIn) {
+    // User is logged in, show the logout button
+    logoutButton.style.display = "block";
+  } else {
+    // User is not logged in, hide the logout button
+    logoutButton.style.display = "none";
+  }
+
+  // Register the logout button click event
+  logoutButton.addEventListener("click", () => {
+    listeners.logout();
+  });
 });
+
 
 /* async function oneListingTemplate() {
   const listing = await listingMethods.getListing();
@@ -121,10 +150,3 @@ async function allListingsTemplate() {
 }
 
 allListingsTemplate();
-
-/// Create, Update, Delete
-
-/* createListing();
-updateListing();
-removeListing();
- */

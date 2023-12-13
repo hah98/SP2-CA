@@ -10,11 +10,16 @@ export async function setUpdateFormListener() {
   if (form) {
     const listing = await getListing(id);
 
+    const button = form.querySelector("button");
+    button.disabled = true;
+
     form.title.value = listing.title;
     form.description.value = listing.description; 
     form.endsAt.value = listing.endsAt; 
     form.tags.value = listing.tags;
     form.media.value = listing.media;
+
+    button.disabled = false;
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();

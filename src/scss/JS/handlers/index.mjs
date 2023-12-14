@@ -8,3 +8,5 @@ export * from "./listItem.mjs";
 export * from "../api/listings/viewListing.mjs";
 export * from "./updateListing.mjs";
 export * from "./updateProfile.mjs";
+export * from "./delete.mjs"
+export * from "./addBid.mjs";

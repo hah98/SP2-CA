@@ -49,6 +49,8 @@ import * as listingMethods from "./handlers/index.mjs";
 /* import * as listingsMethods from "./templates/index.mjs"; */
 import * as templates from "./templates/index.mjs";
 
+
+
 /* import {
   createListing,
   updateListing,
@@ -67,60 +69,68 @@ if (path === "/AuctionHouse/register/index.html") {
   listeners.setUpdateFormListener();
 } else if (path === "/AuctionHouse/profile/edit.html") {
   listeners.setUpdateProfileFormListener();
+} else if (path === "/AuctionHouse/delete/index.html") {
+  listeners.setRemoveFormListener();
+} else if (path === "/AuctionHouse/viewingItem/index.html") {
+  listeners.setAddBidFormListener();
 }
 
 
 
-/// First try logout button 
-/* document.addEventListener("DOMContentLoaded", () => {
-  // Register the logout button click event
-  document.getElementById("logoutButton").addEventListener("click", () => {
-    listeners.logout();
-  });
-}); */
-
-
-/// Sceond try logout button
-
 document.addEventListener("DOMContentLoaded", () => {
   const logoutButton = document.getElementById("logoutButton");
+  const userDropdown = document.getElementById("userDropdown");
+  const avatarImage = document.getElementById("headerAvatar");
+  const headerCredit = document.getElementById("headerCredit");
+  const headerName = document.getElementById("headerName");
+  const loginLink = document.getElementById("loginLink");
+  const signUpLink = document.getElementById("signUpLink");
 
   // Check if the user is logged in (profile stored in the localStorage)
   const isLoggedIn = localStorage.getItem("profile") !== null;
 
   if (isLoggedIn) {
-    // User is logged in, show the logout button
+    // User is logged in, show the logout button and profile details
     logoutButton.style.display = "block";
-    // Set the avatar in the header
+
+    // Set the avatar and credits in the header
     const profile = JSON.parse(localStorage.getItem("profile"));
-    if (profile && profile.avatar && profile.credits) {
-      headerAvatar.src = profile.avatar;
-      
-      // Concatenate the label and the actual credit value
+    if (profile && profile.avatar && profile.credits && profile.name) {
+      avatarImage.src = profile.avatar;
       headerCredit.innerHTML = "Credits: " + profile.credits;
+      headerName.innerHTML = "Welcome " + profile.name;
     }
-    } else {
-    // User is not logged in, hide the logout button
+
+    // Show the entire dropdown bar
+    userDropdown.style.display = "block";
+
+    // Hide the login and sign-up links
+    loginLink.style.display = "none";
+    signUpLink.style.display = "none";
+  } else {
+    // User is not logged in, hide the logout button and profile details
     logoutButton.style.display = "none";
-    }
+    avatarImage.style.display = "none";
+    headerCredit.style.display = "none";
+    headerName.style.display = "none";
 
-    // User clicks logout button: 
-    logoutButton.addEventListener("click", () => {
-      listeners.logout();
-    });
-    });
+    // Hide the entire dropdown bar
+    userDropdown.style.display = "none";
+
+    // Show the login and sign-up links
+    loginLink.style.display = "block";
+    signUpLink.style.display = "block";
+  }
+
+  // User clicks logout button
+  logoutButton.addEventListener("click", () => {
+    listeners.logout();
+  });
+});
 
 
-/* async function oneListingTemplate() {
-  const listing = await listingMethods.getListing();
-  const container = document.querySelector("#listing");
-  templates.renderListingTemplate(listing, container);
-}
-
-oneListingTemplate(); */
 
 
-//// Second try oneListingTemplate
 
 
 async function oneListingTemplate() {
@@ -146,10 +156,6 @@ async function oneListingTemplate() {
 }
 
 oneListingTemplate();
-
-
-
-/* /* ALL LISTINGS */
 
 async function allListingsTemplate() {
   const listings = await listingsMethods.getListings();

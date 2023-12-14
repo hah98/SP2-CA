@@ -84,4 +84,3 @@ export function renderListingTemplate(listingDataList, parent) {
     console.error('Listing data is not an array:', listingDataList);
   }
 }
-

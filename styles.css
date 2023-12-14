@@ -12,16 +12,21 @@ a {
 /* Header for all pages */
 
 #headerAvatar {
-  width: 50px;
-  height: 50px;
-  margin-left: 600px;
+  width: 60px;
+  height: 60px;
+  margin-left: 450px;
   border-radius: 50%;
-  /*  margin-right: 200px; */
+  margin-top: 20px;
 }
 
 #headerCredit {
-  margin-left: 10px;
-  color: #fff;
+  margin-left: 20px;
+  color: #000;
+  margin-top: 20px;
+}
+
+#headerName {
+  font-weight: bold;
 }
 
 #listing {
@@ -96,4 +101,20 @@ footer {
 #namePreview {
   margin-left: 140px;
   margin-top: 20px;
+}
+
+/* Adding bids */
+
+.bids-container {
+  margin-top: 10px; /* Adjust the spacing as needed */
+}
+
+.bid {
+  border: 1px solid #ccc; /* Border for each bid */
+  padding: 10px; /* Padding for each bid */
+  margin-bottom: 5px; /* Spacing between bids */
+}
+
+.seller-container {
+  margin-top: 20px; /* Adjust the spacing as needed */
 }

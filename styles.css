@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
+
+* {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +14,18 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+#simple {
+  letter-spacing: 5px;
+}
+
+#firstbox {
+  background-color: #cbd8fb;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 30vh;
+}
+
 
 /* Header for all pages */
 
@@ -62,15 +80,8 @@ img.img-fluid {
   gap: 50px;
 }
 
-/* .img-fluid {
-  width: 200px;
-  height: 200px; 
-  object-fit: cover;
-  margin-bottom: 50px; 
-} */
-
 .title {
-  font-size: 40px;
+  /* font-size: 40px; */
   font-family: Arial, Helvetica, sans-serif;
   /*  text-align: center; */
   margin-bottom: 10px;

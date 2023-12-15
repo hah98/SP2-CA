@@ -32,28 +32,29 @@ export async function addBid(listingId) {
 
 
 /// second try: 
-
 import { API_AUCTION_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
 const action = "/listings";
-const action1 = "/bids";
 const method = "POST";
 
 export async function addBid(listingId, bidAmount) {
-  if (!listingId || !bidAmount) {
-    throw new Error("Listing ID and bid amount are required.");
+  // Parse bidAmount as a float
+  const parsedBidAmount = parseFloat(bidAmount);
+
+  if (!listingId || isNaN(parsedBidAmount)) {
+    throw new Error("Listing ID and a valid numeric bid amount are required.");
   }
 
-  const addBidListingURL = `${API_AUCTION_URL}${action}/${listingId}${action1}`;
+  const addBidListingURL = `${API_AUCTION_URL}${action}/${listingId}/bids`;
 
   const response = await authFetch(addBidListingURL, {
-    method,
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      amount: bidAmount,
+      amount: parsedBidAmount, // Use the parsed value
       // Other bid data properties here
     }),
   });

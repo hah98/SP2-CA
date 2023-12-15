@@ -129,10 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-
-
 async function oneListingTemplate() {
   // Extract the id from the URL query string
   const urlParams = new URLSearchParams(window.location.search);

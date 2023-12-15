@@ -2,7 +2,7 @@ import { API_AUCTION_URL } from "../constants.mjs";
 
 import { authFetch } from "../authFetch.mjs";
 
-const action = "/listings";
+const action = "/listings?_bids=true&_seller=true&_tags=true&_active=true&sort=created&sortOrder=desc";
 
 
 export async function getListings() {

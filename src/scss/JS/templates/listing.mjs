@@ -52,15 +52,21 @@ export function listingTemplate(listingData) {
 
   // Additional information
   const created = document.createElement("p");
-  created.innerText = `Created: ${new Date(listingData.created).toLocaleString()}`;
+  created.innerText = `Created: ${new Date(
+    listingData.created
+  ).toLocaleString()}`;
   listing.appendChild(created);
 
   const updated = document.createElement("p");
-  updated.innerText = `Updated: ${new Date(listingData.updated).toLocaleString()}`;
+  updated.innerText = `Updated: ${new Date(
+    listingData.updated
+  ).toLocaleString()}`;
   listing.appendChild(updated);
 
   const endsAt = document.createElement("p");
-  endsAt.innerText = `Ends At: ${new Date(listingData.endsAt).toLocaleString()}`;
+  endsAt.innerText = `Ends At: ${new Date(
+    listingData.endsAt
+  ).toLocaleString()}`;
   listing.appendChild(endsAt);
 
   // Bid Info
@@ -93,6 +99,7 @@ export function listingTemplate(listingData) {
       // Handle error or show error message
     }
   });
+
   bidForm.appendChild(bidButton);
 
   listing.appendChild(bidForm);
@@ -105,6 +112,6 @@ export function renderListingTemplate(listingDataList, parent) {
   if (Array.isArray(listingDataList)) {
     parent.append(...listingDataList.map(listingTemplate));
   } else {
-    console.error('Listing data is not an array:', listingDataList);
+    console.error("Listing data is not an array:", listingDataList);
   }
 }

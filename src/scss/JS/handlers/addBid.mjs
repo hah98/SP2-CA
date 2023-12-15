@@ -1,32 +1,29 @@
 /// Add bid file for handlers
 
-// Add bid file for handlers
-
 import { addBid } from "../api/listings/addBid.mjs";
 
 export function setAddBidFormListener() {
-  document.addEventListener("DOMContentLoaded", () => {
     const addBidButton = document.querySelector("#addBid");
-
+  
     if (addBidButton) {
       addBidButton.addEventListener("click", async (event) => {
         event.preventDefault();
-
-        // Extract the listing ID from the URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const currentListingId = urlParams.get("id");
-
+  
+        // Replace "currentListingId" with the variable where you store the listing ID
+        const listingId = currentListingId;
+  
+        // Send bid to the API
         try {
-          // Send bid to the API
-          await addBid(currentListingId);
-
+          await addBid(listingId);
           // Show success message
-          alert("Bid added successfully!"); // Use alert for simplicity
+          showSuccessMessage("Bid added successfully!");
         } catch (error) {
           console.error("Error adding bid:", error);
           // Handle error or show error message
         }
       });
     }
-  });
-}
+  }
+  
+
+  

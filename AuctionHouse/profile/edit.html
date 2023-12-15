@@ -15,11 +15,22 @@
   <body style="background-color: #EAEEF9">
     
     <header>
-      <nav class="navbar navbar-expand-md navbar" style="background-color: #CBD8FB;">
+      <nav class="navbar navbar-expand-md navbar"style="background-color: #CBD8FB;">
         <div class="container">
           <a href="../../index.html">
-          <img src="../../Images/1-removebg-preview.png" width="180px" height="180px" alt="noroff socials logo">
+          <img src="/Images/1-removebg-preview.png" width="180px" height="180px" alt="noroff socials logo">
           </a>
+
+           <!-- Adding the credit of user when logged in -->
+           <p id="headerName"> </p>
+
+            <!-- Adding avatar to header when user is logged in -->
+            <img id="headerAvatar" src="" alt="Avatar">
+  
+            <!-- Adding the credit of user when logged in -->
+            <p id="headerCredit"> </p>
+           
+
           <button
             class="navbar-toggler"
             type="button"
@@ -34,38 +45,63 @@
           <div class="collapse navbar-collapse justify-content-end" id="nav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a
-                href="./AuctionHouse/login/index.html"
-                class="nav-link active text-light"
-                aria-current="Page"
-                >Login</a
-              >
-              <li class="nav-item">
-                <a
-                href="./AuctionHouse/login/index.html"
-                class="nav-link active text-light"
-                aria-current="Page"
-                >My Profile</a
-              >
-              </li>
-              <li class="nav-item">
-                <a href="./AuctionHouse/register/index.html" class="nav-link text-light">Register</a>
-              </li>
-               <!-- logout function button -->
-               <li>
-                <button class="btn btn-dark" id="logoutButton">Logout</button>
-                </li>
-                <!--  -->
-             <form class="form-inline my- my-lg-0">
-                <input
-                  class="form-control mr-sm-2"
-                  type="text"
-                  placeholder="Search"
-                />
-                <button class="btn btn-light  my-1 my-sm-1" type="submit">Submit</button>
-  
+
+
+
+
+                <li class="nav-item">
                   
+                  <a href="/AuctionHouse/listItem/index.html" class="nav-link" id="listItem">
+                     <h5> List Item </h5>
+                  </a>
+              
+                </li>
+
+                <li class="nav-item">
+                  
+                  <a href="/AuctionHouse/Listings/index.html" class="nav-link" id="SeeListings">
+                     <h5> Listings </h5>
+                  </a>
+              
+                </li>
+
+
+              
+                <li class="nav-item">
+                
+                  <a href="/AuctionHouse/login/index.html" class="nav-link active" id="loginLink">
+                    <h5> Log In</h5>
+                  </a>
+               
+                </li>
+                
+
+                <li class="nav-item">
+                  
+                    <a href="/AuctionHouse/login/index.html" class="nav-link active" id="signUpLink">
+                     <h5>Sign Up </h5>
+                    </a>
+                
+                  </li>
+
+                 
+             
+              
+
+              <div class="dropdown">
+                <button class="btn dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
                 </button>
+                <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                  <li><a class="dropdown-item" href="/AuctionHouse/profile/edit.html">My Profile</a></li>
+                  <li><a class="dropdown-item" href="/AuctionHouse/listItem/index.html">Create Listing</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" id="logoutButton">Logout</a></li>
+                </ul>
+              </div>
+
+             
+               
               </form> 
             </ul>
           </div>
@@ -246,7 +282,9 @@
   </footer>
   <!-- Footer -->
 
-  <!-- Include the avatar update script -->
+ <!-- Bootstrap JS (Popper.js and Bootstrap JS) -->
+ <script src="/node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+ <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
   </body>
 </html>

@@ -69,9 +69,15 @@ export function listingTemplate(listingData) {
   ).toLocaleString()}`;
   listing.appendChild(endsAt);
 
+
+
   // Bid Info
   const bidInfo = document.createElement("p");
-  bidInfo.innerText = `Current Bid: ${listingData.currentBid || 0} credits`;
+  const currentBidAmount =
+    listingData._count && listingData._count.bids > 0
+      ? listingData._count.bids
+      : 0;
+  bidInfo.innerText = `Bid: ${currentBidAmount}`;
   listing.appendChild(bidInfo);
 
   // Bid Form

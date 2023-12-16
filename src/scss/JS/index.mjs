@@ -73,7 +73,7 @@ if (path === "/AuctionHouse/register/index.html") {
   listeners.setRemoveFormListener();
 } else if (path === "/AuctionHouse/viewingItem/index.html") {
   listeners.setAddBidFormListener();
-}
+} 
 
 
 

@@ -1,5 +1,3 @@
-// old code:
-
 import { register } from "../api/auth/register.mjs"; 
 
 export function setRegisterFormListener() {

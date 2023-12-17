@@ -3,7 +3,7 @@ import { addBid } from "../api/listings/addBid.mjs";
 export function listingTemplate(listingData) {
   const listing = document.createElement("div");
   listing.classList.add("listing");
-  listing.classList.add("listing-card-1"); 
+  listing.classList.add("listing-card-1");
 
   // Title
   const title = document.createElement("h1");
@@ -73,8 +73,6 @@ export function listingTemplate(listingData) {
   endsAt.classList.add("endsAt-1");
   listing.appendChild(endsAt);
 
-
-
   // Bid Info
   const bidInfo = document.createElement("p");
   const currentBidAmount =
@@ -102,13 +100,19 @@ export function listingTemplate(listingData) {
   bidButton.addEventListener("click", async () => {
     try {
       const bidAmount = bidInput.value;
+
+      // Check if the bid amount is too low
+      if (parseFloat(bidAmount) <= parseFloat(currentBidAmount)) {
+        alert(
+          "Your bid must be higher than the current bid. Please enter a higher amount."
+        );
+        return;
+      }
+
       await addBid(listingData.id, bidAmount);
       alert("Bid placed successfully!");
-      // Update the listing with the new bid information
-      // You may need to fetch the updated listing data and re-render the template
     } catch (error) {
       console.error("Error placing bid:", error);
-      // Handle error or show error message
     }
   });
 

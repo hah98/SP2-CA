@@ -9,7 +9,6 @@ export function setAddBidFormListener() {
     addBidButton.addEventListener("click", async (event) => {
       event.preventDefault();
 
-      // Replace "currentListingId" with the variable where you store the listing ID
       const listingId = currentListingId;
 
       // Send bid to the API
@@ -22,7 +21,6 @@ export function setAddBidFormListener() {
         window.location.href = "/index.html";
       } catch (error) {
         console.error("Error adding bid:", error);
-        // Handle error or show error message
       }
     });
   }

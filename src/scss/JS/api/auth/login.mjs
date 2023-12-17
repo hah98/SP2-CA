@@ -1,6 +1,5 @@
 import { API_AUCTION_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
-/* import * as headers from "../authFetch.mjs"; */
 
 const action = "/auth/login";
 const method = "post";

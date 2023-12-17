@@ -1,9 +1,8 @@
 /* Code for all posts  */
-
 export function listingTemplateB(listingData) {
   const listing = document.createElement("div");
   listing.classList.add("listings");
-  listing.classList.add("listing-card"); // Add the listing-card class
+  listing.classList.add("listing-card");
 
   // Title
   const title = document.createElement("h2");
@@ -14,7 +13,7 @@ export function listingTemplateB(listingData) {
   // Media (Image)
   if (listingData.media && listingData.media.length > 0) {
     const img = document.createElement("img");
-    img.src = listingData.media[0]; // Assuming media is an array, use the first element
+    img.src = listingData.media[0];
     img.classList.add("img-fluid");
     img.alt = `Image for this listing: ${listingData.title}`;
 
@@ -47,17 +46,15 @@ function navigateToListingPage(listingId) {
 }
 
 export function renderListingTemplates(listingDataList, parent) {
-  // Check if the parent element is null or undefined
   if (!parent) {
     // Return without logging an error
     return;
   }
 
-  // Filter listings that have both images and titles
+  // Filter so only listings with images and title apear
   const filteredListings = listingDataList.filter((listing) => {
     return listing.media && listing.media.length > 0 && listing.title;
   });
 
-  // Map and append the filtered listing templates to the parent element
   parent.append(...filteredListings.map(listingTemplateB));
 }

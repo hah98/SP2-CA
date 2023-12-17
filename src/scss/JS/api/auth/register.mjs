@@ -19,18 +19,4 @@ export async function register(profile) {
   return result;
 }
 
-/* import * as headers from "../authFetch.mjs"; */
-/* const body = JSON.stringify(profile);
-  const response = await fetch(registerUrl, {
-    headers: {
-      "content-type": "application/json",
-    },
-    method,
-    body,
-  });
 
-  const result = await response.json();
-  console.log(result);
-  alert("Congrats, you are now registered");
-  return result;
-} */

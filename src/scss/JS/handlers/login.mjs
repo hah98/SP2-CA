@@ -1,5 +1,3 @@
-// old code
-
 import { login } from "../api/auth/login.mjs";
 
 export function setLoginFormListener() {

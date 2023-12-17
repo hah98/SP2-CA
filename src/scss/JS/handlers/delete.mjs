@@ -23,16 +23,15 @@ export async function setRemoveFormListener() {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
 
-      // Ask for confirmation before deleting
+      // Confirmation before deleting
       const isConfirmed = confirm("Are you sure you want to delete this listing?");
       if (!isConfirmed) {
         return;
       }
 
-      // Delete the listing
       await removeListing(id);
 
-      // Redirect to the main page or any other desired page after deletion
+      // Redirect to the main page
       window.location.href = "/index.html";
     });
   }

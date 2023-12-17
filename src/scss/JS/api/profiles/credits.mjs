@@ -1,4 +1,3 @@
-// api/credits/index.mjs
 import { API_AUCTION_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 

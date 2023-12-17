@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const isLoggedIn = localStorage.getItem("profile") !== null;
 
   if (isLoggedIn) {
-    // User is logged in, show the logout button and profile details
+    // If the user is logged in -> show logout button and profile details in header
     logoutButton.style.display = "block";
 
     // Set the avatar and credits in the header
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     headerCredit.style.display = "none";
     headerName.style.display = "none";
 
-    // Hide the entire dropdown bar
+    // Hide the entire dropdown bar wehn user is not logged in
     userDropdown.style.display = "none";
 
     // Show the login and sign-up links

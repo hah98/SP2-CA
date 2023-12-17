@@ -1,5 +1,3 @@
-//// Here I will import * from the other files in handlers example login
-
 export * from "./register.mjs";
 export * from "./login.mjs";
 export * from "./logout.mjs";

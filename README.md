@@ -1,7 +1,7 @@
 # SP2-CA
 
 
-![image](./images/Skjermbilde 2023-12-17 kl. 21.41.56.png)
+(./images/Skjermbilde%202023-05-31%20kl.%2014.50.56.png)
 
 This is Auction House and online auction house where users can bid, 
 create and look through all sorts of listings. 

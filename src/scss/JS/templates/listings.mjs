@@ -3,6 +3,7 @@
 export function listingTemplateB(listingData) {
   const listing = document.createElement("div");
   listing.classList.add("listings");
+  listing.classList.add("listing-card"); // Add the listing-card class
 
   // Title
   const title = document.createElement("h2");
@@ -11,7 +12,6 @@ export function listingTemplateB(listingData) {
   title.classList.add("title");
 
   // Media (Image)
-
   if (listingData.media && listingData.media.length > 0) {
     const img = document.createElement("img");
     img.src = listingData.media[0]; // Assuming media is an array, use the first element
@@ -34,30 +34,7 @@ export function listingTemplateB(listingData) {
     img.style.cursor = "pointer";
 
     listing.appendChild(title);
-
     listing.appendChild(img);
-  }
-
-  ///
-
-  // Media (Images)
-  if (listingData.media && listingData.media.length > 0) {
-    const mediaContainer = document.createElement("div");
-
-    // For when I want to show the rest of the images in the listing
-    /* listingData.media.forEach((mediaUrl) => {
-    const img = document.createElement("img");
-    img.src = mediaUrl;
-    img.alt = `Image for this listing: ${listingData.title}`;
-    img.classList.add("img-fluid"); 
-    mediaContainer.appendChild(img);
-  }); */
-
-    /// Try
-
-    ///
-
-    listing.appendChild(mediaContainer);
   }
 
   return listing;
@@ -70,5 +47,17 @@ function navigateToListingPage(listingId) {
 }
 
 export function renderListingTemplates(listingDataList, parent) {
-  parent.append(...listingDataList.map(listingTemplateB));
+  // Check if the parent element is null or undefined
+  if (!parent) {
+    // Return without logging an error
+    return;
+  }
+
+  // Filter listings that have both images and titles
+  const filteredListings = listingDataList.filter((listing) => {
+    return listing.media && listing.media.length > 0 && listing.title;
+  });
+
+  // Map and append the filtered listing templates to the parent element
+  parent.append(...filteredListings.map(listingTemplateB));
 }

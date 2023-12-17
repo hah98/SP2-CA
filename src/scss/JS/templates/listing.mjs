@@ -3,24 +3,25 @@ import { addBid } from "../api/listings/addBid.mjs";
 export function listingTemplate(listingData) {
   const listing = document.createElement("div");
   listing.classList.add("listing");
+  listing.classList.add("listing-card-1"); 
 
   // Title
-  const title = document.createElement("h2");
+  const title = document.createElement("h1");
   title.innerText = listingData.title;
   listing.appendChild(title);
-  title.classList.add("title");
+  title.classList.add("title-1");
 
   // Description
   const description = document.createElement("p");
   description.innerText = listingData.description;
   listing.appendChild(description);
-  description.classList.add("description");
+  description.classList.add("description-1");
 
   // Media (Image)
   if (listingData.media && listingData.media.length > 0) {
     const img = document.createElement("img");
     img.src = listingData.media[0];
-    img.classList.add("img-fluid");
+    img.classList.add("img-fluid-1");
     img.alt = `Image for this listing: ${listingData.title}`;
     listing.appendChild(img);
   }
@@ -32,7 +33,7 @@ export function listingTemplate(listingData) {
       const img = document.createElement("img");
       img.src = mediaUrl;
       img.alt = `Image for this listing: ${listingData.title}`;
-      img.classList.add("img-fluid");
+      img.classList.add("img-fluid-2");
       mediaContainer.appendChild(img);
     });
     listing.appendChild(mediaContainer);
@@ -55,18 +56,21 @@ export function listingTemplate(listingData) {
   created.innerText = `Created: ${new Date(
     listingData.created
   ).toLocaleString()}`;
+  created.classList.add("created-1");
   listing.appendChild(created);
 
   const updated = document.createElement("p");
   updated.innerText = `Updated: ${new Date(
     listingData.updated
   ).toLocaleString()}`;
+  updated.classList.add("updated-1");
   listing.appendChild(updated);
 
   const endsAt = document.createElement("p");
   endsAt.innerText = `Ends At: ${new Date(
     listingData.endsAt
   ).toLocaleString()}`;
+  endsAt.classList.add("endsAt-1");
   listing.appendChild(endsAt);
 
 
@@ -78,6 +82,7 @@ export function listingTemplate(listingData) {
       ? listingData._count.bids
       : 0;
   bidInfo.innerText = `Bid: ${currentBidAmount}`;
+  bidInfo.classList.add("bidInfo-1");
   listing.appendChild(bidInfo);
 
   // Bid Form
@@ -93,6 +98,7 @@ export function listingTemplate(listingData) {
   const bidButton = document.createElement("button");
   bidButton.type = "button";
   bidButton.innerText = "Place Bid";
+  bidButton.classList.add("bidButton-1");
   bidButton.addEventListener("click", async () => {
     try {
       const bidAmount = bidInput.value;

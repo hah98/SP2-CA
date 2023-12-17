@@ -2,7 +2,6 @@ import { API_AUCTION_URL } from "../constants.mjs";
 import { authFetch } from "../authFetch.mjs";
 
 const action = "/listings";
-const action2 = "/bids"
 
 export async function getListing(id) {
   if (!id) {

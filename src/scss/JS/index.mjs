@@ -34,47 +34,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const loginLink = document.getElementById("loginLink");
   const signUpLink = document.getElementById("signUpLink");
 
-  // Check if the user is logged in (profile stored in the localStorage)
-  const isLoggedIn = localStorage.getItem("profile") !== null;
+  // Check if the loginLink exists in the DOM
+  if (loginLink) {
+    // Check if the user is logged in (profile stored in the localStorage)
+    const isLoggedIn = localStorage.getItem("profile") !== null;
 
-  if (isLoggedIn) {
-    // If the user is logged in -> show logout button and profile details in header
-    logoutButton.style.display = "block";
+    if (isLoggedIn) {
+      // User is logged in, show the logout button and profile details
+      logoutButton.style.display = "block";
 
-    // Set the avatar and credits in the header
-    const profile = JSON.parse(localStorage.getItem("profile"));
-    if (profile && profile.avatar && profile.credits && profile.name) {
-      avatarImage.src = profile.avatar;
-      headerCredit.innerHTML = "Credits: " + profile.credits;
-      headerName.innerHTML = "Welcome " + profile.name;
+      // Set the avatar and credits in the header
+      const profile = JSON.parse(localStorage.getItem("profile"));
+      if (profile && profile.avatar && profile.credits && profile.name) {
+        avatarImage.src = profile.avatar;
+        headerCredit.innerHTML = "Credits: " + profile.credits;
+        headerName.innerHTML = "Welcome " + profile.name;
+      }
+
+      // Show the entire dropdown bar
+      userDropdown.style.display = "block";
+
+      // Hide the login and sign-up links
+      if (loginLink) loginLink.style.display = "none";
+      if (signUpLink) signUpLink.style.display = "none";
+    } else {
+      // User is not logged in, hide the logout button and profile details
+      logoutButton.style.display = "none";
+      avatarImage.style.display = "none";
+      headerCredit.style.display = "none";
+      headerName.style.display = "none";
+
+      // Hide the entire dropdown bar when the user is not logged in
+      userDropdown.style.display = "none";
+
+      // Show the login and sign-up links
+      if (loginLink) loginLink.style.display = "block";
+      if (signUpLink) signUpLink.style.display = "block";
     }
 
-    // Show the entire dropdown bar
-    userDropdown.style.display = "block";
-
-    // Hide the login and sign-up links
-    loginLink.style.display = "none";
-    signUpLink.style.display = "none";
-  } else {
-    // User is not logged in, hide the logout button and profile details
-    logoutButton.style.display = "none";
-    avatarImage.style.display = "none";
-    headerCredit.style.display = "none";
-    headerName.style.display = "none";
-
-    // Hide the entire dropdown bar wehn user is not logged in
-    userDropdown.style.display = "none";
-
-    // Show the login and sign-up links
-    loginLink.style.display = "block";
-    signUpLink.style.display = "block";
+    // User clicks logout button
+    logoutButton.addEventListener("click", () => {
+      listeners.logout();
+    });
   }
-
-  // User clicks logout button
-  logoutButton.addEventListener("click", () => {
-    listeners.logout();
-  });
 });
+
 
 async function oneListingTemplate() {
   const urlParams = new URLSearchParams(window.location.search);

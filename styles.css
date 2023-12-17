@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap");
+
+* {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  Main page */
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#simple {
+  letter-spacing: 5px;
+}
+
+#firstbox {
+  background-color: #cbd8fb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  height: 30vh;
+}
+
+#listings {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 300px));
+  gap: 50px;
+  padding: 1em;
+  width: 100vw;
+  justify-content: center;
+  margin-top: -25px;
+}
+
+.listing-card {
+  background-color: #cbd8fb; 
+  padding: 15px;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; 
+}
+
+.listing-card:hover {
+  transform: scale(1.05); 
+}
+
+img.img-fluid {
+  height: 200px;
+  width: 100%; 
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; 
+}
+
+.title {
+  margin-bottom: 10px;
+  font-size: 18px; 
+}
+
+.description {
+  font-size: 16px; 
+  color: #333; 
+}
+
+/* Header for all pages */
+
+#headerAvatar {
+  width: 60px;
+  height: 60px;
+  margin-left: 450px;
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+#headerCredit {
+  margin-left: 20px;
+  color: #000;
+  margin-top: 20px;
+}
+
+#headerName {
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 100px;
+}
+
+.form-control:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* One listing page  */
+
+.title-1 {
+  margin-bottom: 10px;
+  font-size: 50px;
+  justify-content: center;
+}
+
+#listing {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 300px));
+  gap: 50px;
+  padding: 1em;
+  width: 100vw;
+  justify-content: center;
+  margin-top: -25px;
+}
+
+.listing-card-1 {
+  margin-top: 30px;
+  justify-content: center;
+  background-color: #cbd8fb; 
+  width: 50vw;
+  padding: 60px; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; 
+}
+
+img.img-fluid-1 {
+  height: 200px;
+  width: 70%; 
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; 
+  justify-content: center;
+}
+
+img.img-fluid-2 {
+  height: 200px;
+  width: 70%; 
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; 
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.description-1 {
+  font-size: 30px; 
+  color: #333; 
+  justify-content: center;
+}
+
+.created-1 {
+  margin-top: 20px;
+  font-size: 20px;
+  text-transform: bold;
+  text-decoration: underline;
+}
+
+.updated-1 {
+  margin-top: 20px;
+  font-size: 20px;
+  text-transform: bold;
+  text-decoration: underline;
+}
+
+.endsAt-1{
+  margin-top: 20px;
+  font-size: 20px;
+  text-transform: bold;
+  text-decoration: underline;
+}
+
+.bidInfo-1{
+  margin-top: 20px;
+  font-size: 20px;
+  text-transform: bold;
+  text-decoration: underline;
+}
+
+.bidButton-1{
+  color: #fff;
+  width: 80px;
+  height: 30px;
+  font-size: 15px;
+  border-radius: 15%;
+  background-color: #2A468B;
+  margin-left: 10px;
+}
+
+/* Profile edit page */
+
+#avatarPreview {
+  margin-left: 100px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+#namePreview {
+  margin-left: 140px;
+  margin-top: 20px;
+}

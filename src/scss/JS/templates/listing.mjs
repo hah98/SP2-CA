@@ -1,19 +1,29 @@
 import { addBid } from "../api/listings/addBid.mjs";
+import { getProfile } from "../api/profiles/read.mjs";
+
 
 export function listingTemplate(listingData) {
   const listing = document.createElement("div");
   listing.classList.add("listing");
-  listing.classList.add("listing-card-1");
+  listing.classList.add("listing-listing");
 
-  // Title
-  const title = document.createElement("h1");
-  title.innerText = listingData.title;
-  listing.appendChild(title);
-  title.classList.add("title-1");
-
+ // Title
+ const title = document.createElement("h1");
+ const maxLength = 10; 
+ const truncatedTitle = listingData.title.length > maxLength ?
+   listingData.title.substring(0, maxLength) + "..." :
+   listingData.title; 
+ title.innerText = truncatedTitle; 
+ listing.appendChild(title);
+ title.classList.add("title-1");
+  
   // Description
   const description = document.createElement("p");
-  description.innerText = listingData.description;
+  const maxDescriptionLength = 10; // Set the maximum length of the description
+  const truncatedDescription = listingData.description.length > maxDescriptionLength ?
+    listingData.description.substring(0, maxDescriptionLength) + "..." :
+    listingData.description; // Truncate description if it exceeds the maximum length
+  description.innerText = truncatedDescription; // Set the truncated description
   listing.appendChild(description);
   description.classList.add("description-1");
 
@@ -50,6 +60,36 @@ export function listingTemplate(listingData) {
     });
     listing.appendChild(tags);
   }
+  
+  // Seller
+  const sellerContainer = document.createElement("div");
+  const seller = document.createElement("p");
+  seller.classList.add("seller");
+
+  // Check if seller information exists
+  if (listingData.seller && listingData.seller.name) {
+    // If seller information exists, display it
+    seller.innerText = `Seller: ${listingData.seller.name}`;
+  } else {
+    // If seller information doesn't exist, display "Unknown Seller"
+    seller.innerText = "Unknown Seller";
+  }
+
+  sellerContainer.appendChild(seller);
+  listing.appendChild(sellerContainer);
+
+  // Fetch profile information only if seller information exists
+  if (listingData.seller && listingData.seller.name) {
+    getProfile(listingData.seller.name)
+      .then((profileData) => {
+        const sellerName = profileData.name || "Unknown Seller";
+        seller.innerText = `Seller: ${sellerName}`;
+      })
+      .catch((error) => {
+        console.error("Error fetching seller profile:", error);
+      });
+  }
+
 
   // Additional information
   const created = document.createElement("p");

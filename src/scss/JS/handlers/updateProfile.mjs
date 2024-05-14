@@ -28,7 +28,6 @@ export async function setUpdateProfileFormListener() {
 
     form.credits.value = credits;
     form.bids.value = bids !== undefined ? bids : 0;
-    
 
     // Update the avatarPreview src
     avatarPreview.src = profile.avatar;
@@ -46,6 +45,7 @@ export async function setUpdateProfileFormListener() {
       profile.email = email;
       // Send it to the API
       updateProfile(profile);
+      console.log("Succesfully updated avatar");
     });
   }
 }

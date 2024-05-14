@@ -17,7 +17,7 @@ export async function setUpdateFormListener() {
     form.description.value = listing.description; 
     form.endsAt.value = listing.endsAt; 
     form.tags.value = listing.tags;
-    form.media.value = listing.media;
+    /* form.media.value = listing.media; */
 
     button.disabled = false;
 

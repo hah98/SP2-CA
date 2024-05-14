@@ -57,12 +57,16 @@ document.addEventListener("DOMContentLoaded", () => {
       // Hide the login and sign-up links
       if (loginLink) loginLink.style.display = "none";
       if (signUpLink) signUpLink.style.display = "none";
+
+      
+      /* kom tilbake hit hibo */
     } else {
       // User is not logged in, hide the logout button and profile details
       logoutButton.style.display = "none";
       avatarImage.style.display = "none";
       headerCredit.style.display = "none";
       headerName.style.display = "none";
+      createPost1.style.display = "none";
 
       // Hide the entire dropdown bar when the user is not logged in
       userDropdown.style.display = "none";
@@ -70,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show the login and sign-up links
       if (loginLink) loginLink.style.display = "block";
       if (signUpLink) signUpLink.style.display = "block";
+      
     }
 
     // User clicks logout button

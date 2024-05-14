@@ -2,8 +2,8 @@ import { API_AUCTION_URL } from "../constants.mjs";
 
 import { authFetch } from "../authFetch.mjs";
 
-const action = "/listings?_bids=true&_seller=true&_tags=true&_active=true&sort=created&sortOrder=desc";
-
+const action = "/auction/listings?_sort=created&sortOrder=desc";
+/* "/listings?_bids=true&_seller=true&_tags=true&_active=true&sort=created&sortOrder=desc"; */
 
 export async function getListings() {
   const getListingsUrl = `${API_AUCTION_URL}${action}`;
@@ -23,5 +23,3 @@ export async function getListing(id) {
 
   return await response.json();
 }
-
-

@@ -145,7 +145,8 @@ img.img-fluid-2 {
 .bidInfo-1, 
 .tags, 
 .seller, 
-.bid-form {
+.bid-form, 
+.id-listing{
   font-size: 20px;
   text-transform: bold;
   text-decoration: underline;

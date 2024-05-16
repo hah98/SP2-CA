@@ -42,7 +42,7 @@ export async function setUpdateFormListener() {
         alert("Listing has been updated successfully!");
 
         // Redirect the user back to the main index page
-        window.location.href = "/AuctionHouse/listings/index.html";
+       /*  window.location.href = "/AuctionHouse/listings/index.html"; */
       } catch (error) {
         console.error("Error updating listing:", error);
        

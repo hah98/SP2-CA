@@ -78,6 +78,13 @@ export function listingTemplate(listingData) {
   sellerContainer.appendChild(seller);
   listing.appendChild(sellerContainer);
 
+
+   // ID
+   const idParagraph = document.createElement("p");
+   idParagraph.innerText = `ID: ${listingData.id}`;
+   idParagraph.classList.add("id-listing")
+   listing.appendChild(idParagraph);
+
   // Fetch profile information only if seller information exists
   if (listingData.seller && listingData.seller.name) {
     getProfile(listingData.seller.name)

@@ -10,17 +10,17 @@ if (path.includes("register")) {
   listeners.setRegisterFormListener();
 } else if (path.includes("login")) {
   listeners.setLoginFormListener();
-} else if (path === "/AuctionHouse/listItem/index.html") {
+} else if (path.includes("listItem")) {
   listeners.setListFormListener();
-} else if (path === "/AuctionHouse/viewingItem/edit.html") {
+} else if (path.includes("viewingItem")) {
   listeners.setUpdateFormListener();
-} else if (path === "/AuctionHouse/profile/edit.html") {
+} else if (path.includes("edit")) {
   listeners.setUpdateProfileFormListener();
-} else if (path === "/AuctionHouse/delete/index.html") {
+} else if (path.includes("delete")) {
   listeners.setRemoveFormListener();
-} else if (path === "/AuctionHouse/viewingItem/index.html") {
+} else if (path.includes("viewingItem")) {
   listeners.setAddBidFormListener();
-} else if (path === "/AuctionHouse/profile/edit.html") {
+} else if (path.includes("edit")) {
   listeners.setgetProfileListingsFormListener();
   console.log("hello");
 }

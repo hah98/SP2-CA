@@ -23,16 +23,30 @@ export async function setUpdateFormListener() {
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      const form = event.target;
+
+      // Show confirmation dialog before updating
+      const confirmed = confirm("Are you sure you want to update this listing?");
+      if (!confirmed) return; // Exit if user cancels
+
       const formData = new FormData(form);
-      const listing = Object.fromEntries(formData.entries());
-      listing.id = id;
+      const listingData = Object.fromEntries(formData.entries());
+      listingData.id = id;
 
-      listing.tags = listing.tags.split(",").map((tag) => tag.trim());
-      /* console.log(profile); */
+      listingData.tags = listingData.tags.split(",").map((tag) => tag.trim());
 
-      // Send it to the API
-      updateListing(listing);
+      try {
+        // Send the updated listing data to the API
+        await updateListing(listingData);
+        
+        // Show success message to the user
+        alert("Listing has been updated successfully!");
+
+        // Redirect the user back to the main index page
+        window.location.href = "/AuctionHouse/listings/index.html";
+      } catch (error) {
+        console.error("Error updating listing:", error);
+       
+      }
     });
   }
 }

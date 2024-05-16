@@ -6,9 +6,9 @@ import * as templates from "./templates/index.mjs";
 
 const path = location.pathname;
 
-if (path === "/AuctionHouse/register/index.html") {
+if (path.includes("register")) {
   listeners.setRegisterFormListener();
-} else if (path === "/AuctionHouse/login/index.html") {
+} else if (path.includes("login")) {
   listeners.setLoginFormListener();
 } else if (path === "/AuctionHouse/listItem/index.html") {
   listeners.setListFormListener();
@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (loginLink) loginLink.style.display = "none";
       if (signUpLink) signUpLink.style.display = "none";
 
-      
       /* kom tilbake hit hibo */
     } else {
       // User is not logged in, hide the logout button and profile details
@@ -74,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show the login and sign-up links
       if (loginLink) loginLink.style.display = "block";
       if (signUpLink) signUpLink.style.display = "block";
-      
     }
 
     // User clicks logout button
@@ -83,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 
 async function oneListingTemplate() {
   const urlParams = new URLSearchParams(window.location.search);

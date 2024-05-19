@@ -51,7 +51,7 @@ git clone git@github.com:hah98/SP2-CA
 
 Click the link below to run the site:
 
-https://musical-marzipan-581c21.netlify.app/
+https://hibosp2.netlify.app/
 
 ## Contributing
 

@@ -31,41 +31,42 @@ a {
 
 #listings {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 300px));
-  gap: 50px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusted for responsiveness */
+  gap: 20px; /* Adjusted for better spacing */
   padding: 1em;
-  width: 100vw;
   justify-content: center;
-  margin-top: -25px;
+  max-width: 1200px; /* Adjusted max-width for better readability */
+  margin: 0 auto; /* Center the posts horizontally */
 }
 
 .listing-card {
-  background-color: #cbd8fb; 
+  background-color: #cbd8fb;
   padding: 15px;
-  border-radius: 8px; 
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out; 
+  transition: transform 0.3s ease-in-out;
+  width: 100%; /* Make each card take full width */
 }
 
 .listing-card:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05);
 }
 
 img.img-fluid {
   height: 200px;
-  width: 100%; 
+  width: 100%;
   object-fit: cover;
-  border-radius: 8px 8px 0 0; 
+  border-radius: 8px 8px 0 0;
 }
 
 .title {
   margin-bottom: 10px;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .description {
-  font-size: 16px; 
-  color: #333; 
+  font-size: 16px;
+  color: #333;
 }
 
 /* Header for all pages */
@@ -73,7 +74,7 @@ img.img-fluid {
 #headerAvatar {
   width: 60px;
   height: 60px;
-  margin-left: 450px;
+  margin-left: 50px;
   border-radius: 50%;
   margin-top: 20px;
 }
@@ -99,93 +100,75 @@ footer {
 
 /* One listing page  */
 
-.title-1 {
-  margin-bottom: 10px;
-  font-size: 50px;
-  justify-content: center;
-}
-
 #listing {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 300px));
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
   gap: 50px;
   padding: 1em;
-  width: 100vw;
-  justify-content: center;
-  margin-top: -25px;
+  width: 100%;
+  max-width: 1200px; /* Adjust maximum width as needed */
+  margin: 0 auto; /* Center horizontally */
 }
 
-.listing-card-1 {
-  margin-top: 30px;
-  justify-content: center;
-  background-color: #cbd8fb; 
-  width: 50vw;
-  padding: 60px; 
-  border-radius: 8px; 
+.listing-listing {
+  background-color: #cbd8fb;
+  margin-top: 50px;
+  width: 100%; /* Take full width */
+  padding: 15px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out; 
+  margin-bottom: 20px;
 }
 
-img.img-fluid-1 {
-  height: 200px;
-  width: 70%; 
-  object-fit: cover;
-  border-radius: 8px 8px 0 0; 
-  justify-content: center;
-}
-
+/* Adjust image width for smaller screens */
+img.img-fluid-1,
 img.img-fluid-2 {
-  height: 200px;
-  width: 70%; 
+  height: 40vh;
+  width: 100%; /* Take full width */
   object-fit: cover;
-  border-radius: 8px 8px 0 0; 
-  justify-content: center;
-  margin-top: 20px;
+  border-radius: 8px 8px 0 0;
+  display: block; /* Ensure it's a block-level element */
+  margin: 0 auto; /* Center the image */
 }
 
 .description-1 {
-  font-size: 30px; 
-  color: #333; 
-  justify-content: center;
+  font-size: 30px;
+  color: #333;
+  text-align: center; /* Center text horizontally */
 }
 
-.created-1 {
-  margin-top: 20px;
+/* Center these elements horizontally */
+.created-1,
+.updated-1,
+.endsAt-1,
+.bidInfo-1, 
+.tags, 
+.bid-form, 
+.id-listing{
   font-size: 20px;
   text-transform: bold;
-  text-decoration: underline;
+  text-align: center; /* Center text horizontally */
 }
 
-.updated-1 {
-  margin-top: 20px;
-  font-size: 20px;
-  text-transform: bold;
-  text-decoration: underline;
-}
-
-.endsAt-1{
-  margin-top: 20px;
-  font-size: 20px;
-  text-transform: bold;
-  text-decoration: underline;
-}
-
-.bidInfo-1{
-  margin-top: 20px;
-  font-size: 20px;
-  text-transform: bold;
-  text-decoration: underline;
-}
-
-.bidButton-1{
+.bidButton-1 {
   color: #fff;
   width: 80px;
   height: 30px;
   font-size: 15px;
   border-radius: 15%;
-  background-color: #2A468B;
-  margin-left: 10px;
+  background-color: #2a468b;
+  margin-top: 20px; /* Adjust top margin here */
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .listing-listing {
+    width: 90%; /* Adjust width for smaller screens */
+  }
+}
+
+
 
 /* Profile edit page */
 
@@ -199,4 +182,19 @@ img.img-fluid-2 {
 #namePreview {
   margin-left: 140px;
   margin-top: 20px;
+}
+
+.logo {
+  height: 180px;
+  width: 180px;
+ 
+}
+
+#dropdowns {
+  margin-right: 50px;
+}
+
+#createPost1 {
+  color: #000;
+  margin-right: 50px;
 }

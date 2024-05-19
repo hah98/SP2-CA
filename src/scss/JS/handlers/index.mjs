@@ -8,4 +8,4 @@ export * from "./updateListing.mjs";
 export * from "./updateProfile.mjs";
 export * from "./delete.mjs";
 export * from "./addBid.mjs";
-
+export * from "./searchListings.mjs";

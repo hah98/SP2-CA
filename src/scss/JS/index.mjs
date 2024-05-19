@@ -1,29 +1,35 @@
 import * as listeners from "./handlers/index.mjs";
 import * as listingsMethods from "./handlers/index.mjs";
 import * as listingMethods from "./handlers/index.mjs";
+/* import { setupSearchFunctionality } from "./handlers/index.mjs"; */
 
 import * as templates from "./templates/index.mjs";
 
 const path = location.pathname;
 
-if (path === "/AuctionHouse/register/index.html") {
+if (path.includes("register")) {
   listeners.setRegisterFormListener();
-} else if (path === "/AuctionHouse/login/index.html") {
+} else if (path.includes("login")) {
   listeners.setLoginFormListener();
-} else if (path === "/AuctionHouse/listItem/index.html") {
+} else if (path.includes("listItem")) {
   listeners.setListFormListener();
-} else if (path === "/AuctionHouse/viewingItem/edit.html") {
+} else if (path.includes("viewingItem")) {
   listeners.setUpdateFormListener();
-} else if (path === "/AuctionHouse/profile/edit.html") {
+} else if (path.includes("edit")) {
   listeners.setUpdateProfileFormListener();
-} else if (path === "/AuctionHouse/delete/index.html") {
+} else if (path.includes("delete")) {
   listeners.setRemoveFormListener();
-} else if (path === "/AuctionHouse/viewingItem/index.html") {
+} else if (path.includes("viewingItem")) {
   listeners.setAddBidFormListener();
-} else if (path === "/AuctionHouse/profile/edit.html") {
+} else if (path.includes("/" && "listings")) {
+  listeners.setupSearchFunctionality();
+} 
+
+
+/* else if (path.includes("edit")) {
   listeners.setgetProfileListingsFormListener();
   console.log("hello");
-}
+} */
 
 document.addEventListener("DOMContentLoaded", () => {
   const logoutButton = document.getElementById("logoutButton");
@@ -57,12 +63,15 @@ document.addEventListener("DOMContentLoaded", () => {
       // Hide the login and sign-up links
       if (loginLink) loginLink.style.display = "none";
       if (signUpLink) signUpLink.style.display = "none";
+
+      /* kom tilbake hit hibo */
     } else {
       // User is not logged in, hide the logout button and profile details
       logoutButton.style.display = "none";
       avatarImage.style.display = "none";
       headerCredit.style.display = "none";
       headerName.style.display = "none";
+      createPost1.style.display = "none";
 
       // Hide the entire dropdown bar when the user is not logged in
       userDropdown.style.display = "none";
@@ -78,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
 
 async function oneListingTemplate() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -108,3 +116,5 @@ async function allListingsTemplate() {
 }
 
 allListingsTemplate();
+
+/* listeners.setupSearchFunctionality(); */

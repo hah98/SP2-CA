@@ -6,7 +6,11 @@ export function listingTemplateB(listingData) {
 
   // Title
   const title = document.createElement("h2");
-  title.innerText = listingData.title;
+  const maxLength = 20; 
+  const truncatedTitle = listingData.title.length > maxLength ?
+    listingData.title.substring(0, maxLength) + "..." :
+    listingData.title; 
+  title.innerText = truncatedTitle; 
   listing.appendChild(title);
   title.classList.add("title");
 

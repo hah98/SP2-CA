@@ -1,19 +1,30 @@
 import { addBid } from "../api/listings/addBid.mjs";
+import { getProfile } from "../api/profiles/read.mjs";
 
 export function listingTemplate(listingData) {
   const listing = document.createElement("div");
   listing.classList.add("listing");
-  listing.classList.add("listing-card-1");
+  listing.classList.add("listing-listing");
 
   // Title
   const title = document.createElement("h1");
-  title.innerText = listingData.title;
+  const maxLength = 10;
+  const truncatedTitle =
+    listingData.title.length > maxLength
+      ? listingData.title.substring(0, maxLength) + "..."
+      : listingData.title;
+  title.innerText = truncatedTitle;
   listing.appendChild(title);
   title.classList.add("title-1");
 
   // Description
   const description = document.createElement("p");
-  description.innerText = listingData.description;
+  const maxDescriptionLength = 10; // Set the maximum length of the description
+  const truncatedDescription =
+    listingData.description.length > maxDescriptionLength
+      ? listingData.description.substring(0, maxDescriptionLength) + "..."
+      : listingData.description; // Truncate description if it exceeds the maximum length
+  description.innerText = truncatedDescription; // Set the truncated description
   listing.appendChild(description);
   description.classList.add("description-1");
 
@@ -42,6 +53,7 @@ export function listingTemplate(listingData) {
   // Tags
   if (listingData.tags && listingData.tags.length > 0) {
     const tags = document.createElement("div");
+    tags.innerText = `Tags: `;
     tags.classList.add("tags");
     listingData.tags.forEach((tag) => {
       const tagElement = document.createElement("span");
@@ -50,6 +62,15 @@ export function listingTemplate(listingData) {
     });
     listing.appendChild(tags);
   }
+
+
+  // ID
+  const idParagraph = document.createElement("p");
+  idParagraph.innerText = `ID: ${listingData.id}`;
+  idParagraph.classList.add("id-listing");
+  listing.appendChild(idParagraph);
+
+ 
 
   // Additional information
   const created = document.createElement("p");
@@ -83,42 +104,43 @@ export function listingTemplate(listingData) {
   bidInfo.classList.add("bidInfo-1");
   listing.appendChild(bidInfo);
 
-  // Bid Form
-  const bidForm = document.createElement("form");
-  bidForm.classList.add("bid-form");
+ // Bid Form
+ const bidForm = document.createElement("form");
+ bidForm.classList.add("bid-form");
 
-  const bidInput = document.createElement("input");
-  bidInput.type = "number";
-  bidInput.name = "bidAmount";
-  bidInput.placeholder = "Enter your bid amount";
-  bidForm.appendChild(bidInput);
+ const bidInput = document.createElement("input");
+ bidInput.type = "number";
+ bidInput.name = "bidAmount";
+ bidInput.placeholder = "Enter your bid amount";
+ bidForm.appendChild(bidInput);
 
-  const bidButton = document.createElement("button");
-  bidButton.type = "button";
-  bidButton.innerText = "Place Bid";
-  bidButton.classList.add("bidButton-1");
-  bidButton.addEventListener("click", async () => {
-    try {
-      const bidAmount = bidInput.value;
+ const bidButton = document.createElement("button");
+ bidButton.type = "button";
+ bidButton.innerText = "Place Bid";
+ bidButton.classList.add("bidButton-1");
+ bidButton.addEventListener("click", async () => {
+   try {
+     const bidAmount = bidInput.value;
 
-      // Check if the bid amount is too low
-      if (parseFloat(bidAmount) <= parseFloat(currentBidAmount)) {
-        alert(
-          "Your bid must be higher than the current bid. Please enter a higher amount."
-        );
-        return;
-      }
+     // Check if the bid amount is too low
+     if (parseFloat(bidAmount) <= parseFloat(currentBidAmount)) {
+       alert(
+         "Your bid must be higher than the current bid. Please enter a higher amount."
+       );
+       return;
+     }
 
-      await addBid(listingData.id, bidAmount);
-      alert("Bid placed successfully!");
-    } catch (error) {
-      console.error("Error placing bid:", error);
-    }
-  });
+     await addBid(listingData.id, bidAmount);
+     alert("Bid placed successfully!");
+   } catch (error) {
+    alert("Bid was unsuccessful!");
+     console.error("Error placing bid:", error);
+   }
+ });
 
-  bidForm.appendChild(bidButton);
+ bidForm.appendChild(bidButton);
 
-  listing.appendChild(bidForm);
+ listing.appendChild(bidForm);
 
   return listing;
 }

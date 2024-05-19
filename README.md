@@ -1,6 +1,5 @@
 # SP2-CA
-
-(./images/Skjermbilde%2023-12-17%20kl.%20.41.56.png)
+![Skjermbilde 2023-12-17 kl  21 41 56](https://github.com/hah98/SP2-CA/assets/74331454/b9dad719-c06c-4daa-9450-ffa1ebc11d08)
 
 This is Auction House and online auction house where users can bid, 
 create and look through all sorts of listings. 

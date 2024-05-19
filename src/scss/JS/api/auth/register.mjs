@@ -7,16 +7,27 @@ export async function register(profile) {
   const registerUrl = API_AUCTION_URL + action;
   const body = JSON.stringify(profile);
 
-  const response = await fetch(registerUrl, {
-    headers: {
-      "content-type": "application/json",
-    },
-    method,
-    body: JSON.stringify(profile),
-  });
+  try {
+    const response = await fetch(registerUrl, {
+      headers: {
+        "content-type": "application/json",
+      },
+      method,
+      body,
+    });
 
-  const result = await response.json();
-  return result;
+    if (!response.ok) {
+      throw new Error("Registration failed. Please try again.");
+    }
+
+    // Display success message
+    alert("Profile created successfully!");
+
+    // Redirect to login page
+    window.location.href = "/AuctionHouse/login";
+  } catch (error) {
+    console.error("Error registering profile:", error);
+    alert("Registration failed. Please try again.");
+  }
 }
-
 

@@ -1,7 +1,7 @@
 # 🏠 SP2-CA: Auction House
 ![Project Screenshot](https://github.com/hah98/SP2-CA/assets/74331454/7ef16508-01a9-4f65-8084-5a3ebf645755)
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://hibosp2.netlify.app/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7028a48d-837b-4c97-89cc-7a4937e01c9c/deploy-status)](https://app.netlify.com/sites/hibosp2/deploys)
 ![GitHub repo size](https://img.shields.io/github/repo-size/hah98/SP2-CA)
 ![GitHub top language](https://img.shields.io/github/languages/top/hah98/SP2-CA)
 ![GitHub last commit](https://img.shields.io/github/last-commit/hah98/SP2-CA)

@@ -1,6 +1,7 @@
 import * as listeners from "./handlers/index.mjs";
 import * as listingsMethods from "./handlers/index.mjs";
 import * as listingMethods from "./handlers/index.mjs";
+/* import { setupSearchFunctionality } from "./handlers/index.mjs"; */
 
 import * as templates from "./templates/index.mjs";
 
@@ -20,10 +21,15 @@ if (path.includes("register")) {
   listeners.setRemoveFormListener();
 } else if (path.includes("viewingItem")) {
   listeners.setAddBidFormListener();
-} else if (path.includes("edit")) {
+} else if (path.includes("/" && "listings")) {
+  listeners.setupSearchFunctionality();
+} 
+
+
+/* else if (path.includes("edit")) {
   listeners.setgetProfileListingsFormListener();
   console.log("hello");
-}
+} */
 
 document.addEventListener("DOMContentLoaded", () => {
   const logoutButton = document.getElementById("logoutButton");
@@ -110,3 +116,5 @@ async function allListingsTemplate() {
 }
 
 allListingsTemplate();
+
+/* listeners.setupSearchFunctionality(); */

@@ -144,12 +144,10 @@ img.img-fluid-2 {
 .endsAt-1,
 .bidInfo-1, 
 .tags, 
-.seller, 
 .bid-form, 
 .id-listing{
   font-size: 20px;
   text-transform: bold;
-  text-decoration: underline;
   text-align: center; /* Center text horizontally */
 }
 

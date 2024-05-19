@@ -53,6 +53,7 @@ export function listingTemplate(listingData) {
   // Tags
   if (listingData.tags && listingData.tags.length > 0) {
     const tags = document.createElement("div");
+    tags.innerText = `Tags: `;
     tags.classList.add("tags");
     listingData.tags.forEach((tag) => {
       const tagElement = document.createElement("span");
@@ -62,22 +63,6 @@ export function listingTemplate(listingData) {
     listing.appendChild(tags);
   }
 
-  // Seller
-  const sellerContainer = document.createElement("div");
-  const seller = document.createElement("p");
-  seller.classList.add("seller");
-
-  // Check if seller information exists
-  if (listingData.seller && listingData.seller.name) {
-    // If seller information exists, display it
-    seller.innerText = `Seller: ${listingData.seller.name}`;
-  } else {
-    // If seller information doesn't exist, display "Unknown Seller"
-    seller.innerText = "Unknown Seller";
-  }
-
-  sellerContainer.appendChild(seller);
-  listing.appendChild(sellerContainer);
 
   // ID
   const idParagraph = document.createElement("p");
@@ -85,17 +70,7 @@ export function listingTemplate(listingData) {
   idParagraph.classList.add("id-listing");
   listing.appendChild(idParagraph);
 
-  // Fetch profile information only if seller information exists
-  if (listingData.seller && listingData.seller.name) {
-    getProfile(listingData.seller.name)
-      .then((profileData) => {
-        const sellerName = profileData.name || "Unknown Seller";
-        seller.innerText = `Seller: ${sellerName}`;
-      })
-      .catch((error) => {
-        console.error("Error fetching seller profile:", error);
-      });
-  }
+ 
 
   // Additional information
   const created = document.createElement("p");

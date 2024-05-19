@@ -1,5 +1,5 @@
 # SP2-CA
-![Skjermbilde 2023-12-17 kl  21 41 56](https://github.com/hah98/SP2-CA/assets/74331454/b9dad719-c06c-4daa-9450-ffa1ebc11d08)
+![Skjermbilde 2024-05-19 kl  10 17 27 pm](https://github.com/hah98/SP2-CA/assets/74331454/7ef16508-01a9-4f65-8084-5a3ebf645755)
 
 This is Auction House and online auction house where users can bid, 
 create and look through all sorts of listings. 
@@ -9,14 +9,19 @@ create and look through all sorts of listings.
 This is Auction House and online auction house where users can bid, 
 create and look through all sorts of listings. 
 
-The website contains these pages:
+The website contains these pages and funcunalities:
 
 - Main page (index.html)
 - View All Listings
-- View specifc
-- bid
+- View specifc listing (bid)
+- View profile and update avatar
 - Log In
 - Register
+- create Listing
+- Update listing
+- Delete Listing
+- Search funcunality
+  
 
 ## Built With
 
@@ -27,9 +32,9 @@ This project is coded using:
 - Vanilla JavaScript
 - Bootstrap
 
-## Getting Started
+## Getting Started /viewing the project
 
-View website: https://musical-marzipan-581c21.netlify.app/
+View website: https://hibosp2.netlify.app/
 
 ### Installing
 

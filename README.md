@@ -1,44 +1,45 @@
-# SP2-CA
-![Skjermbilde 2024-05-19 kl  10 17 27 pm](https://github.com/hah98/SP2-CA/assets/74331454/7ef16508-01a9-4f65-8084-5a3ebf645755)
+# 🏠 SP2-CA: Auction House
+![Project Screenshot](https://github.com/hah98/SP2-CA/assets/74331454/7ef16508-01a9-4f65-8084-5a3ebf645755)
 
-This is Auction House and online auction house where users can bid, 
-create and look through all sorts of listings. 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/YOUR_BADGE_ID/deploy-status)](https://hibosp2.netlify.app/)
+![GitHub repo size](https://img.shields.io/github/repo-size/hah98/SP2-CA)
+![GitHub top language](https://img.shields.io/github/languages/top/hah98/SP2-CA)
+![GitHub last commit](https://img.shields.io/github/last-commit/hah98/SP2-CA)
+![GitHub](https://img.shields.io/github/license/hah98/SP2-CA)
 
-## Description
+This is **Auction House**, an online auction platform where users can bid, create, and browse through various listings.
 
-This is Auction House and online auction house where users can bid, 
-create and look through all sorts of listings. 
+## 📜 Description
 
-The website contains these pages and funcunalities:
+Auction House offers the following pages and functionalities:
 
-- Main page (index.html)
-- View All Listings
-- View specifc listing (bid)
-- View profile and update avatar
-- Log In
-- Register
-- create Listing
-- Update listing
-- Delete Listing
-- Search funcunality
-  
+- 🏠 Main page (index.html)
+- 📜 View All Listings
+- 🔍 View specific listing (bid)
+- 👤 View profile and update avatar
+- 🔑 Log In
+- 📝 Register
+- ➕ Create Listing
+- 🛠️ Update Listing
+- 🗑️ Delete Listing
+- 🔎 Search functionality
 
-## Built With
+## 🛠️ Built With
 
 This project is coded using:
 
-- HTML
-- CSS
-- Vanilla JavaScript
-- Bootstrap
+- 🌐 HTML
+- 🎨 CSS
+- 📜 Vanilla JavaScript
+- 💄 Bootstrap
 
-## Getting Started /viewing the project
+## 🚀 Getting Started / Viewing the Project
 
-View website: https://hibosp2.netlify.app/
+View the website: [Auction House](https://hibosp2.netlify.app/)
 
-### Installing
+### 📦 Installing
 
-How to clone my repo: 
+How to clone the repository:
 
 1. Clone the repo:
 
@@ -47,18 +48,22 @@ git clone git@github.com:hah98/SP2-CA
 
 ```
 
-### Running
+### ▶️ Running
 
 Click the link below to run the site:
 
-https://hibosp2.netlify.app/
+[Auction House](https://hibosp2.netlify.app/)
 
-## Contributing
+## 🤝 Contributing
 
-This is a project I have worked on myself. I have plans on going back to this project in the future, to fix and update the website with my new knowledge :) But for now its me, myself and I.
+This is a project I have worked on myself. I plan on revisiting and updating it with my new knowledge in the future. For now, it's a solo project by me.
 
-## Contact
+## 📞 Contact
 
-Contact me here:
+Feel free to reach out to me:
 
-Dicord username: hah98
+- Discord: @hah98
+
+---
+
+Hope you enjoy using Auction House! 😊
